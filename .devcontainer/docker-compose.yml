@@ -1,0 +1,18 @@
+version: "3"
+networks:
+  example-next-js_network:
+    driver: bridge
+services:
+  app:
+    container_name: example-next-js_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sleep infinity
+    environment:
+      TZ: Asia/Tokyo
+    volumes:
+      - ..:/workspace:cached
+      - ~/.ssh:/home/vscode/.ssh
+    networks:
+      - example-next-js_network
