@@ -28,7 +28,8 @@
       },
       "extensions": [
         "eamodio.gitlens",
-        "GitHub.copilot"
+        "GitHub.copilot",
+        "PulkitGangwar.nextjs-snippets"
       ]
     }
   }

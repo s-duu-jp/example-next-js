@@ -15,3 +15,17 @@ RUN if [ "$USER_UID" != "1000" ] || [ "$USER_GID" != "1000" ]; then \
 
 # ワークスペースディレクトリの設定
 WORKDIR /workspace
+
+# Switch User
+USER ${USERNAME}
+
+# Node.js Install
+ARG NODE_VERSION=20.13.1
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
+    && . ~/.nvm/nvm.sh \
+    && bash -i -c 'nvm install ${NODE_VERSION}'
+
+# Bun Install
+RUN curl -fsSL https://bun.sh/install | bash \
+    && sudo chown -R $USERNAME:$USERNAME /root \
+    && echo 'export PATH="/root/.bun/bin:$PATH"' >> /home/$USERNAME/.bashrc
