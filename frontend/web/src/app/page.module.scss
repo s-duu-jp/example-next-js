@@ -1,0 +1,31 @@
+/** 土曜日のスタイル */
+.saturday {
+    background-color: #cceafa;
+}
+
+/** 日曜日のスタイル */
+.sunday {
+    background-color: #f8c0bd;
+}
+
+/* すべてのtdとthに対して縦線を追加し、行の高さを設定 */
+.tableCell {
+    border: 1px solid black;
+    /* 行の高さを60pxに設定 */
+    height: 60px;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.tablePadding {
+    /* パディングを追加 */
+    padding: 10px;
+}
+
+.redColor {
+    color: #f41f1f;
+}
+
+.blueColor {
+    color: #3a23e3;
+}
